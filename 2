@@ -1,0 +1,33 @@
+'''б) Дано текстові файли f1 і f2. Переписати зі збереженням порядку проходження
+кожен другий компонент файлу f1 в f2, а кожен другий компонент файлу f2 - в файл f1.
+Використовувати допоміжний файл h.'''
+k=open('f2.txt', encoding='utf-8')
+for row in k:
+    x=open('h.txt','a')
+    x.write(row)
+    x.close()
+k.close()
+file=open('f1.txt', encoding='utf-8')
+c=0
+for row in file:
+    for letter in row:
+        c+=1
+        if c%2==0:
+            g = open('f2.txt', 'a')
+            g.write(letter)
+        else:
+            continue
+        g.close()
+file.close()
+b=open('h.txt', encoding='utf-8')
+co=0
+for row in b:
+    for letter in row:
+        co+=1
+        if co%2==0:
+            j = open('f1.txt', 'a')
+            j.write(letter)
+        else:
+            continue
+        j.close()
+b.close()
