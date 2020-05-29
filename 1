@@ -1,0 +1,16 @@
+'''а) Дан текстовий файл f. Отримати в файлі g кількість букв, що знаходяться в файлі
+f.'''
+import string
+file=open('f.txt', encoding='utf-8')
+c=0
+b=string.ascii_letters
+for row in file:
+    for letter in row:
+        if letter in b:
+            c+=1
+        else:
+            continue
+file.close()
+c_str=str(c)
+file2=open('g.txt', 'w', encoding='utf-8')
+file2.write(c_str)
